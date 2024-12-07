@@ -2,7 +2,7 @@ name: Sync wool_scripts Repository
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天午夜12点（UTC）执行一次同步
+    - cron: '0 7 * * *'  # 每天午夜12点（UTC）执行一次同步
   workflow_dispatch:  # 允许手动触发
 
 jobs:
