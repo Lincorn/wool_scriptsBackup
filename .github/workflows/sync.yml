@@ -1,8 +1,8 @@
-name: Sync wool_scriptsBackup
+name: Sync wool_scripts Repository
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # 每天午夜7点执行一次（UTC时间）
+    - cron: '0 0 * * *'  # 每天午夜12点（UTC）执行一次同步
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -15,21 +15,17 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.name "Lincorn"
-          git config --global user.email "lemonas@example.com"
+          git config --global user.name "Lincorn"  # 替换为你的 GitHub 用户名
+          git config --global user.email "lincorn@example.com"  # 替换为你的 GitHub 邮箱
 
-      - name: Clone the target repository
+      - name: Clone wool_scripts repository
         run: |
-          git clone https://github.com/fmz200/wool_scripts.git
-          cd LoonKissSurge
-          git pull origin main  # 获取最新内容
-
-      - name: Copy the files to current repository
-        run: |
-          cp -r wool_scriptsBackup/* .  # 将文件复制到当前仓库
+          git clone https://github.com/fmz200/wool_scripts.git  # 克隆 wool_scripts 仓库
+          cp -r wool_scripts/* .  # 将其内容复制到当前仓库
+          rm -rf wool_scripts  # 删除克隆的目录，保持整洁
 
       - name: Commit changes
         run: |
-          git add .
-          git commit -m "Sync latest changes from wool_scriptsBackup"
-          git push origin main  # 推送到当前仓库
+          git add .  # 将变动添加到 Git 暂存区
+          git commit -m "Sync latest changes from wool_scripts"  # 提交同步内容
+          git push origin main  # 推送到当前仓库的 main 分支
