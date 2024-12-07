@@ -27,5 +27,9 @@ jobs:
       - name: Commit changes
         run: |
           git add .  # 将变动添加到 Git 暂存区
-          git commit -m "Sync latest changes from wool_scripts"  # 提交同步内容
-          git push origin main  # 推送到当前仓库的 main 分支
+          if git diff --staged --quiet; then
+            echo "No changes detected."
+          else
+            git commit -m "Sync latest changes from wool_scripts"  # 提交同步内容
+            git push origin main  # 推送到当前仓库的 main 分支
+          fi
