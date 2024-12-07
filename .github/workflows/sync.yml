@@ -1,0 +1,35 @@
+name: Sync wool_scriptsBackup
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 每天午夜7点执行一次（UTC时间）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "Lincorn"
+          git config --global user.email "lemonas@example.com"
+
+      - name: Clone the target repository
+        run: |
+          git clone https://github.com/fmz200/wool_scripts.git
+          cd LoonKissSurge
+          git pull origin main  # 获取最新内容
+
+      - name: Copy the files to current repository
+        run: |
+          cp -r wool_scriptsBackup/* .  # 将文件复制到当前仓库
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Sync latest changes from wool_scriptsBackup"
+          git push origin main  # 推送到当前仓库
