@@ -52,7 +52,7 @@ filterTopReplies=switch,true,tag=哔哩哔哩-[评论区]过滤置顶评论广�
 
 bilimanhua_enable = switch,true,false,tag=哔哩哔哩漫画-脚本开关
 bohejmkh_enable = switch,true,false,tag=薄荷健康-脚本开关
-cdyytmqi_enable = switch,true,false,tag=彩云天气-脚本开关
+cdyytmqi_enable = switch,false,true,tag=彩云天气-脚本开关
 cdnngogo_enable = switch,true,false,tag=菜鸟裹裹-脚本开关
 cdxb_enable = switch,true,false,tag=财新-脚本开关
 davsdmpk_enable = switch,true,false,tag=大众点评-脚本开关
@@ -3038,7 +3038,14 @@ https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|
 # > 小宇宙
 # hostname = api.xiaoyuzhoufm.com
 # 开屏广告
-^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/flash-screen\/list reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash- reject-dict
+# 移除ai总结
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai-summary reject-dict
+# 会员横幅设为不可点击
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/membership\/platform reject-dict
+# 移除小宇宙搜索框内容
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search\/get-(?>preset|express) reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion reject-dict
 
 # > 小芒
 # hostname = mgesq.api.mgtv.com, *.hitv.com
