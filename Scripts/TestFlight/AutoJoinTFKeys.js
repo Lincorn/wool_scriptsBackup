@@ -1,7 +1,7 @@
 /**
  @author fmz200
  @function 获取自动加入TF需要的信息，修改数据存储形式，支持大部分代理工具包括 QX，Loon，Surge，Egern，Stash，ShadowRocket
- @date 2025-06-01 21:27:00
+ @date 2025-06-14 15:27:00
  @quote https://github.com/DecoAri/JavaScript/blob/main/Surge/TF_keys.js
 
  具体使用步骤
@@ -28,9 +28,9 @@ if (reg1.test($request.url)) {
   $.setdata(JSON.stringify(TF_header), "fmz200_TF_header");
 
   if ($.getdata("fmz200_TF_header") !== null) {
-    $.msg($.name, "", "信息获取成功，请关闭脚本！", "");
+    $.msg($.name, "", "令牌获取成功，请关闭脚本！", "");
   } else {
-    $.msg($.name, "", "信息获取失败，请打开Mitm over HTTP2开关，并重启VPN和TestFlight App！", "");
+    $.msg($.name, "", "令牌获取失败，请打开Mitm over HTTP2开关，并重启VPN和TestFlight App！", "");
   }
   $.done({});
 }

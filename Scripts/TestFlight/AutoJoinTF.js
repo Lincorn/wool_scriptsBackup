@@ -1,7 +1,7 @@
 /**
  @author fmz200
- @function 获取自动加入TF需要的信息，修改数据存储形式，支持大部分代理工具包括 QX，Loon，Surge，Egern，Stash，ShadowRocket
- @date 2025-06-01 21:27:00
+ @function 获取自动加入TF需要的信息，修改数据存储形式，支持大部分代理工具包括 QX，Loon，Surge，Egern，Stash，ShadowRocket，青龙
+ @date 2025-06-14 15:27:00
  @quote https://raw.githubusercontent.com/DecoAri/JavaScript/main/Surge/Auto_join_TF.js
 
  具体使用步骤
@@ -13,6 +13,7 @@
 const $ = new Env('自动加入TestFlight');
 const isNode = $.isNode();
 const notify = isNode ? require('./sendNotify') : '';
+$.nodeNotifyMsg = []; // nodeJS合并通知
 
 let TF_APP_ID = isNode ? process.env["fmz200_TF_APP_ID"] : $.getdata("fmz200_TF_APP_ID");
 let TF_header = isNode ? process.env["fmz200_TF_header"] : $.getdata("fmz200_TF_header");
@@ -22,16 +23,22 @@ let TF_header = isNode ? process.env["fmz200_TF_header"] : $.getdata("fmz200_TF_
     await sendMsg("❌ 未添加TF_APP_ID，请手动添加或使用TestFlight链接自动获取", "");
     $.done();
   }
+  if (TF_header == null || TF_header === "") {
+    await sendMsg("❌ 令牌信息不存在，请重新获取", "");
+    $.done();
+  }
   TF_header = JSON.parse(TF_header);
   const appIds = TF_APP_ID.split(',');
   for await (const appId of appIds) {
     await autoPost(appId.trim());
   }
+
+  if (isNode) await sendMsg($.nodeNotifyMsg.join("\n"), "");
   $.done();
 })();
 
 function autoPost(appId) {
-  const url = `https://testflight.apple.com/v3/accounts/${TF_header.Key}/ru/${appId}`;
+  const url = `https://testflight.apple.com/v3/accounts/${TF_header.key}/ru/${appId}`;
   const header = {
     'X-Session-Id': `${TF_header.session_id}`,
     'X-Session-Digest': `${TF_header.session_digest}`,
@@ -40,17 +47,22 @@ function autoPost(appId) {
   }
   return new Promise(function (resolve) {
     $.get({url: url, headers: header}, async function (error, resp, data) {
-      console.log(error);
-      console.log(resp);
-      console.log(data);
+      console.log("❤️ 查询appId情况响应");
+      console.log(`${error}\n`);
+      console.log(`${resp}\n`);
+      console.log(`${data}\n`);
       if (error == null) {
         if (resp.status === 404) {
           updateData(TF_APP_ID, appId);
-          console.log(`[${appId}]不存在该TestFlight，已自动删除该 APP_ID`);
-          await sendMsg(`[${appId}]不存在该TestFlight，已自动删除该 APP_ID`, "");
+          console.log(`[${appId}]不存在该TestFlight，已自动删除该APP_ID`);
+          if (isNode) {
+            $.nodeNotifyMsg.push(`[${appId}]不存在该TestFlight，已自动删除该APP_ID`);
+          } else {
+            await sendMsg(`[${appId}]不存在该TestFlight，已自动删除该APP_ID`, "");
+          }
           resolve();
         } else if (resp.status === 401) {
-          console.log(`[${appId}]请求异常，尝试重新加入`);
+          console.log(`[${appId}]请求异常，可能是令牌过期或者定时任务间隔太短[建议3分钟以上]，尝试重新加入`);
           resolve();
         } else {
           const jsonData = JSON.parse(data);
@@ -62,15 +74,18 @@ function autoPost(appId) {
             resolve();
           } else {
             $.post({url: url + '/accept', headers: header}, async function (error, resp, body) {
-              console.log(error);
-              console.log(resp);
-              console.log(data);
+              console.log("✅ 加入TF响应");
+              console.log(`${error}\n`);
+              console.log(`${resp}\n`);
+              console.log(`${data}\n`);
               const jsonBody = JSON.parse(body);
-              await sendMsg(`[${appId}]TestFlight加入成功，已自动删除该 APP_ID`, "");
+              if (isNode) {
+                $.nodeNotifyMsg.push(`[${appId}:${jsonBody.data.name}]加入成功，已自动删除该APP_ID`);
+              } else {
+                await sendMsg(`[${appId}:${jsonBody.data.name}]加入成功，已自动删除该APP_ID`, "");
+              }
               console.log(jsonBody.data.name + ' TestFlight 加入成功');
               updateData(TF_APP_ID, appId);
-              console.log(`[${appId}]不存在该TestFlight，已自动删除该 APP_ID`);
-              await sendMsg(`[${appId}]不存在该TestFlight，已自动删除该 APP_ID`, "");
               resolve();
             })
           }
@@ -80,7 +95,11 @@ function autoPost(appId) {
           console.log(appId + ' ' + error);
           resolve();
         } else {
-          await sendMsg(`自动加入TF[${appId}]异常`, "");
+          if (isNode) {
+            $.nodeNotifyMsg.push(`自动加入TF[${appId}]异常`);
+          } else {
+            await sendMsg(`自动加入TF[${appId}]异常`, "");
+          }
           console.log(appId + ' ' + error);
           resolve();
         }
