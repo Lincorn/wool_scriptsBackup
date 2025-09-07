@@ -656,7 +656,7 @@ DOMAIN, o2o-ad-log-gateway.alibaba.com
 
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
-# > keep
+# > Keep
 DOMAIN, apm.gotokeep.com
 DOMAIN, kad.gotokeep.com
 
@@ -1589,7 +1589,7 @@ DOMAIN-SUFFIX,-normal-lq.zijieapi.com
 # 广告联盟已包含
 
 
-# >>>>>>>>>>>>>>> ✅ 其他广告 ✅ <<<<<<<<<<<<<<
+# >>>>>>>>>>>>>>> ✅ 其他 ✅ <<<<<<<<<<<<<<
 DOMAIN-KEYWORD, 112wan
 DOMAIN-KEYWORD, 789htbet
 DOMAIN-KEYWORD, XiaoQiang
