@@ -9,9 +9,9 @@
 #############################################
 
 [Rule]
-DOMAIN-SUFFIX,atrace.chelaile.net.cn
-DOMAIN, logs.chelaile.net.cn
-DOMAIN, ad.chelaile.net.cn
+DOMAIN, atrace.chelaile.net.cn, REJECT
+DOMAIN, logs.chelaile.net.cn, REJECT
+DOMAIN, ad.chelaile.net.cn, REJECT
 
 
 
