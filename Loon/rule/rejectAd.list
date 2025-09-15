@@ -608,20 +608,6 @@ DOMAIN-SUFFIX,mobads-logs.baidu.com
 DOMAIN-SUFFIX,nsclick.baidu.com
 DOMAIN, hm.baidu.com
 DOMAIN, hmma.baidu.com
-DOMAIN-SUFFIX, bdtongfei.cn
-DOMAIN-SUFFIX, mobads.baidu.com
-DOMAIN-SUFFIX, ecma.bdimg.com
-DOMAIN-SUFFIX, ecmb.bdimg.com
-DOMAIN-SUFFIX, ecmc.bdimg.com
-DOMAIN-SUFFIX, pups.bdimg.com
-DOMAIN-SUFFIX, su.bdimg.com
-DOMAIN-SUFFIX, mipcache.bdstatic.com
-DOMAIN-SUFFIX, su.bdstatic.com
-DOMAIN-SUFFIX, zz.bdstatic.com
-DOMAIN-SUFFIX, bcebos.com
-DOMAIN-SUFFIX, baidustatic.com
-DOMAIN-SUFFIX, bdstatic.com
-DOMAIN-SUFFIX, duapps.com
 
 # > 百度地图
 DOMAIN, afd.baidu.com
@@ -792,7 +778,7 @@ DOMAIN-SUFFIX, a.dangdang.com
 DOMAIN-SUFFIX, schprompt.dangdang.com
 DOMAIN-SUFFIX, t.dangdang.com
 
-# > 斗鱼
+# > 斗鱼直播
 DOMAIN-SUFFIX, wan.douyu.com
 DOMAIN-SUFFIX, g.wan.douyu.com
 DOMAIN-SUFFIX, dotcounter.douyutv.com
@@ -943,7 +929,7 @@ DOMAIN-SUFFIX, c1.ifengimg.com
 DOMAIN-SUFFIX, click1n.soufun.com
 DOMAIN-SUFFIX, countubn.light.soufun.com
 
-# > 飞常准 VariFlight
+# > 飞常准
 DOMAIN, adv-adlog.variflight.com
 DOMAIN, adv-ads.variflight.com
 DOMAIN, app-ad.variflight.com
@@ -1057,7 +1043,7 @@ DOMAIN-SUFFIX,u51.me
 # 多个广告 感谢CtrlMusic🐓分享
 DOMAIN, apis.alenable.com
 
-# > 国美
+# > 国美电器
 DOMAIN-SUFFIX, prom.gome.com.cn
 
 # > 国双 (Gridsum)
@@ -1153,7 +1139,7 @@ DOMAIN-SUFFIX, 3dm.huya.com
 
 # > 哈啰
 # 大部分图片无法正常加载
-# DOMAIN-KEYWORD, assets.51downapp.cn, reject
+# DOMAIN-KEYWORD, assets.51downapp.cn
 
 # > 黄油相机
 # 开屏广告 感谢#Dragon分享
@@ -1325,11 +1311,11 @@ DOMAIN-SUFFIX,cm.ad.gifshow.com
 DOMAIN-SUFFIX,cm.kwad.com
 
 # > 快手
-;DOMAIN, js-ad.a.yximgs.com, reject
-DOMAIN-SUFFIX, e.kuaishou.com, reject
-DOMAIN-SUFFIX, cm.downloader.commercial.kuaishou.com, reject
-DOMAIN-SUFFIX, cm.ad.gifshow.com, reject
-DOMAIN-SUFFIX, cm.kwad.com, reject
+# DOMAIN, js-ad.a.yximgs.com
+DOMAIN-SUFFIX, e.kuaishou.com
+DOMAIN-SUFFIX, cm.downloader.commercial.kuaishou.com
+DOMAIN-SUFFIX, cm.ad.gifshow.com
+DOMAIN-SUFFIX, cm.kwad.com
 
 # > 快压zip
 DOMAIN-SUFFIX,kuaizip.com
@@ -1422,7 +1408,7 @@ DOMAIN-SUFFIX, adm.leju.com
 DOMAIN-SUFFIX, src.leju.com
 DOMAIN-SUFFIX, staticadm.leju.com
 
-# > 联想 (Lenovo)
+# > 联想
 DOMAIN-SUFFIX, adapi.lenovogame.com
 DOMAIN-SUFFIX, adcore.lenovomm.com
 DOMAIN-SUFFIX, ams.lenovomm.com
@@ -1576,7 +1562,7 @@ DOMAIN-SUFFIX,d.meituan.net
 DOMAIN, adui.tg.meitu.com
 DOMAIN, aaid.uyunad.com
 
-# > 美图秀秀 (Meitu)
+# > 美图秀秀
 DOMAIN-SUFFIX, corp.meitu.com
 DOMAIN-SUFFIX, gg.meitu.com
 DOMAIN-SUFFIX, message.meitu.com
@@ -1773,6 +1759,8 @@ DOMAIN-KEYWORD,api-access.pangolin-sdk-toutiao.com
 DOMAIN, admonitor.thepaper.cn
 DOMAIN, adpai.thepaper.cn
 DOMAIN, imgadpai.thepaper.cn
+DOMAIN-SUFFIX, ad.thepaper.cn
+DOMAIN-SUFFIX, imgad.thepaper.cn
 
 
 
@@ -2087,13 +2075,6 @@ DOMAIN-SUFFIX, img01.taotaosou.cn
 DOMAIN-SUFFIX, re.taotaosou.com
 DOMAIN-SUFFIX, show.kc.taotaosou.com
 
-# > ThePaper (澎湃)
-DOMAIN-SUFFIX, ad.thepaper.cn
-DOMAIN-SUFFIX, imgad.thepaper.cn
-
-# > Thsi.cn (同花顺)
-DOMAIN-SUFFIX, ad.thsi.cn
-
 # > Tumblr
 DOMAIN-SUFFIX, 92x.tumblr.com
 DOMAIN-SUFFIX, its-dori.tumblr.com
@@ -2217,6 +2198,7 @@ DOMAIN-SUFFIX, p.tencentmind.com
 # > 同花顺
 DOMAIN, adm.10jqka.com.cn
 DOMAIN, stat.10jqka.com.cn
+DOMAIN-SUFFIX, ad.thsi.cn
 
 # > 迅雷
 DOMAIN-SUFFIX, adsp.xunlei.com
@@ -2239,13 +2221,13 @@ DOMAIN-SUFFIX, pre.api.tw06.xlmc.sandai.net
 # > 团油
 DOMAIN-KEYWORD,img1.czb365.com
 
-# > 同盾 (Tongdun)
+# > 同盾
 DOMAIN-SUFFIX, fraudmetrix.cn
 DOMAIN-SUFFIX, fp.fraudmetrix.cn
 DOMAIN-SUFFIX, fptest.fraudmetrix.cn
 DOMAIN-SUFFIX, statictest.fraudmetrix.cn
 
-# > 太平洋网络 (PConline)
+# > 太平洋电脑
 DOMAIN-SUFFIX, iad0ssl.pcauto.com.cn
 DOMAIN-SUFFIX, imgad0.pcauto.com.cn
 DOMAIN-SUFFIX, ivy.pcauto.com.cn
@@ -2423,17 +2405,9 @@ DOMAIN-KEYWORD,stsdk.vivoglobal.com
 # > VIVO商城
 DOMAIN-KEYWORD,paradisestatic.vivo.com.cn
 
-# > 唯品会
-DOMAIN-SUFFIX, n-st.vip.com
-DOMAIN-SUFFIX, api.union.vip.com
-DOMAIN-SUFFIX, ms.vipstatic.com
-
 
 
 # >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
-# > 豌豆荚
-DOMAIN-SUFFIX, push.wandoujia.com
-
 # > Whale Cloud (鲸云)
 DOMAIN-SUFFIX, whalecloud.com
 DOMAIN-SUFFIX, feedback.whalecloud.com
@@ -2576,11 +2550,19 @@ DOMAIN-SUFFIX, clkservice.mail.youdao.com
 DOMAIN-SUFFIX, clkservice.union.youdao.com
 DOMAIN-SUFFIX, log.yex.youdao.com
 
-# > 威锋网
+# > 威锋
 # 广告联盟已包含
 #DOMAIN-SUFFIX, aoodoo.feng.com
 #DOMAIN-SUFFIX, push.feng.com
 #DOMAIN-SUFFIX, aoodoo.weiphone.com
+
+# > 豌豆荚
+DOMAIN-SUFFIX, push.wandoujia.com
+
+# > 唯品会
+DOMAIN-SUFFIX, n-st.vip.com
+DOMAIN-SUFFIX, api.union.vip.com
+DOMAIN-SUFFIX, ms.vipstatic.com
 
 # > 歪麦霸王餐
 # 去开屏 
@@ -3195,12 +3177,12 @@ IP-CIDR, 122.229.8.47/32, no-resolve
 IP-CIDR, 122.229.29.89/32, no-resolve
 
 # > 中信银行
-# DOMAIN-SUFFIX, sis.jpush.io, reject
-# DOMAIN-SUFFIX, s.jpush.cn, reject
-# DOMAIN-SUFFIX, jpush.cn, reject
-# DOMAIN-SUFFIX, im64.jpush.cn, reject
-# DOMAIN-SUFFIX, im.jpush.cn, reject
-# DOMAIN-SUFFIX, jpush.html5.qq.com, reject
+# DOMAIN-SUFFIX, sis.jpush.io
+# DOMAIN-SUFFIX, s.jpush.cn
+# DOMAIN-SUFFIX, jpush.cn
+# DOMAIN-SUFFIX, im64.jpush.cn
+# DOMAIN-SUFFIX, im.jpush.cn
+# DOMAIN-SUFFIX, jpush.html5.qq.com
 
 # > 中华万年历
 DOMAIN-KEYWORD,lkme.cc
@@ -3903,3 +3885,4 @@ DOMAIN-SUFFIX, zedo.com
 DOMAIN-SUFFIX, d8.zedo.com
 DOMAIN-SUFFIX, z1.zedo.com
 
+# >>>>>>>>>>>>>>> ✅ 其他 ✅ <<<<<<<<<<<<<<

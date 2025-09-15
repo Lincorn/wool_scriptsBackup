@@ -159,6 +159,7 @@ DOMAIN, hm.baidu.com, REJECT
 DOMAIN, hmma.baidu.com, REJECT
 
 
+
 [Rewrite]
 ^https?:\/\/fcvbjbcebos\.baidu\.com\/.+.mp4 reject
 ^https?:\/\/fcvbjbcebos\.baidu\.com\/.+?\.mp4 reject-img
