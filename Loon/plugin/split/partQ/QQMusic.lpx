@@ -4,8 +4,8 @@
 #!homepage=https://github.com/fmz200/wool_scripts
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/split/partQ/QQMusic.lpx
-#!tg-group=https://t.me/lanjieguanggao
-#!date=2025-08-21 22:37:00
+#!tg-channel=https://t.me/inaisi
+#!date=2025-09-24 21:46:57
 #############################################
 
 [Rule]
@@ -40,7 +40,7 @@ DOMAIN-SUFFIX, v.gdt.qq.com, REJECT
 DOMAIN, amsweb-cdn-gz-1258344696.file.myqcloud.com, REJECT
 DOMAIN, wallpaper-1258344696.file.myqcloud.com, REJECT
 DOMAIN, xs.gdt.qq.com, REJECT
-IP-CIDR, 120.222.240.171/32, no-resolve, REJECT
+IP-CIDR, 120.222.240.171/32, REJECT, no-resolve
 
 
 [Rewrite]

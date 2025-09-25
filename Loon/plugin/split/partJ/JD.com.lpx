@@ -4,8 +4,8 @@
 #!homepage=https://github.com/fmz200/wool_scripts
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/gif/naisi-01.gif
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/split/partJ/JD.com.lpx
-#!tg-group=https://t.me/lanjieguanggao
-#!date=2025-08-21 22:37:00
+#!tg-channel=https://t.me/inaisi
+#!date=2025-09-24 21:46:58
 #############################################
 
 [Argument]
@@ -27,8 +27,8 @@ DOMAIN-SUFFIX, ad.3.cn, REJECT
 DOMAIN-SUFFIX, jd.c-ptsp.com.cn, REJECT
 # 屏蔽DNS, REJECT
 DOMAIN, dns.jd.com, REJECT
-IP-CIDR, 101.124.19.122/32, no-resolve, REJECT
-IP-CIDR6,2402:db40:5100:1011::5/128, no-resolve, REJECT
+IP-CIDR, 101.124.19.122/32, REJECT, no-resolve
+IP-CIDR6,2402:db40:5100:1011::5/128, REJECT, no-resolve
 
 
 [Rewrite]
